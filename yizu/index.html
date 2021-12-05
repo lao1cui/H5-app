@@ -1,0 +1,434 @@
+<!doctype html>  
+<html>  
+
+<head>  
+    <meta charset="UTF-8">  
+    <title></title>  
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />  
+    <link href="http://www.dcloud.io/hellomui/css/mui.min.css" rel="stylesheet" />  
+	
+    <script src="http://www.dcloud.io/hellomui/js/mui.min.js"></script>  
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">  
+    mui.init();
+	  // mui('.mui-scroll-wrapper').scroll();
+		 //  mui.plusReady(function(){
+	  // 				mui.ajax({
+	  // 					url:'http://172.20.10.7:8080/user',
+	  // 					dataType: 'json',
+	  // 					type:'GET',
+	  // 					success: function(data) {
+	  // 						var la = data.data;
+	  // 						var lablist = document.getElementById("doctor");
+	  // 						console.log(la.length);
+	  // 						for( i = 1; i < Math.min(la.length,10); i++) { //循环后台传过来的Json数组  
+	  // 						    var datas = la[i];
+	  // 							console.log(datas.name);
+	  // 							var title=datas.jianjie;
+	  // 							var tab=datas.name;
+	  // 							var id='';
+	  // 							var loginname=datas.jianjie;
+	  // 							var content=datas.jianjie;
+	  // 							lablist.innerHTML= lablist.innerHTML+
+	  // 							'<li class="mui-table-view-cell mui-media"><a href="orderlabroom.html">'
+	  // 		                +'<div>'+tab
+	  // 		                +'<p class="mui-ellipsis">'+
+	  // 		                title+'</p>'
+	  // 		                +'</div></a></li>'
+	  // 		            ;
+	  // 		        }                
+	  // 		    },
+	  // 		    dataType:'json',
+	  // 		    error    : function(xhr,type,errorThrown){
+	  // 		        mui.toast(type);
+	  // 		    }
+	  // 		});
+	  		      
+	  // 		});
+    </script>  
+    <style type="text/css">  
+    body{font-family: "Microsoft YaHei",sans-serif;color:#333;background-color: #F1E9DC;}  
+    div.mui-content{background-color: #F1E9DC;}  
+    p{margin-bottom: 0px;}  
+    .mui-slider-indicator.mui-segmented-control{  
+        padding: 5px 10px;  
+        background: #FFF;  
+    }  
+    .mui-segmented-control.mui-scroll-wrapper{  
+        height: 45px;  
+    }  
+    .mui-segmented-control.mui-scroll-wrapper .mui-control-item{  
+        width: 100px;  
+        border: 1px solid #ccc;  
+        box-shadow:0 0 5px #aaa;  
+        line-height: 30px;  
+    }  
+    .mui-segmented-control.mui-scroll-wrapper .mui-control-item.mui-active{  
+        color: #fff;  
+        background-color: #78909C;  
+    }  
+    .mui-fullscreen .mui-segmented-control~.mui-slider-group{  
+        top: 45px;  
+    }  
+    .mui-slider-group .mui-scroll-wrapper{  
+        padding-top: 5px;  
+    }  
+    </style>  
+</head>  
+
+<body>  
+	<!-- 内容 -->
+    <div class="mui-content">  
+	<!-- 全屏滑块 -->
+        <div id="slider" class="mui-slider mui-fullscreen"> 
+            <div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">  
+                <div class="mui-scroll">  
+                    <a class="mui-control-item mui-active" data-index="0">历史</a>  
+                    <a class="mui-control-item" data-index="1">名医</a>  
+                    <a class="mui-control-item" data-index="2">彝药</a>  
+                    <a class="mui-control-item" data-index="3">食疗</a>  
+                    <a class="mui-control-item" data-index="4">地址</a>  
+                    
+                </div>  
+            </div> 
+			 <!-- 分页 -->
+            <div class="mui-slider-group">  
+                <div class="mui-slider-item mui-control-content mui-active">  
+                    <div class="mui-scroll-wrapper">  
+                        <div class="mui-scroll">  
+                            <div class="mui-card">  
+							<!-- 历史 -->
+                                <div class="mui-card-content">  
+                                  <div class="mui-card">
+                                  									    <div class="mui-card-header mui-card-media">  
+                                  									        <img src="http://www.dcloud.io/hellomui/images/logo.png" style="width:34px">  
+                                  									        <div class="mui-media-body">  
+                                  									            明代本草学家兰茂  
+                                  									            <p>发表于 明代</p>  
+                                  									        </div>  
+                                  									    </div>  
+                                  									    <div class="mui-card-content" >  
+                                  									        <img src="./fonts/lanmao.jpeg" alt="" width="100%"/>  
+                                  									    </div>  
+                                  									    <div class="mui-card-footer">  
+                                  									        <a class="mui-card-link">点赞</a>  
+                                  									        <a class="mui-card-link">评论</a>  
+                                  									        <a class="mui-card-link">更多</a>  
+                                  									    </div>  
+                                  									</div>
+                                                                      <div class="mui-card-content-inner">  
+                                                                          彝族医药起源于原始社会时期，彝族史诗中就有不少的医药知识。当时彝族先民们在与自然灾害及疾病的斗争实践中，慢慢地积累了保护身体健康和提高体质的经验，同时也发展了医药知识。
+                                                                      </div>  
+                                                                  </div>  
+                                                              </div>
+                                  							  <div class="mui-card">
+                                  							      <div class="mui-card-header mui-card-media" style="height:40vw;background-image:url(./fonts/lishishu.jpeg)"></div>  
+                                  							      <div class="mui-card-content">  
+                                  							          <div class="mui-card-content-inner">  
+                                  							              <p>上传于2021年12月4日</p>  
+                                  							              <p style="color: #333;">和其他民族医药一样，药物是彝族医药发展的基础。彝医的药物分植物、动物、矿物三部分...</p>  
+                                  							          </div>  
+                                  							      </div>  
+                                  							      <div class="mui-card-footer">  
+                                  							          <a class="mui-card-link">点赞</a>  
+                                  							          <a class="mui-card-link">更多</a>  
+                                  							      </div>  
+                                  							  </div>
+                                                              <div class="mui-card">  
+                                                                  <div class="mui-card-header">《滇南本草》</div>  
+                                                                  <div class="mui-card-content">  
+                                                                      <div class="mui-card-content-inner">  
+                                                                          15世纪中叶，明代本草学家兰茂著成《滇南本草》。记入了彝族的许多药物。到了清代，对于植物药的运用就更加广泛了。近代，彝汉医药交流日益增多，彝医善于吸收汉医的营养，逐渐摆脱过去单方单药，只凭经验的传统格局，使彝医药有了突破性发展，为彝族医学的发展奠定了良好的基础。  
+                                                                      </div>  
+                                                                  </div>  
+                                                                  <div class="mui-card-footer">更多</div>  
+                                                              </div>  
+                                                              <!-- <div class="mui-card">  
+                                                                  <div class="mui-card-header mui-card-media" style="height:40vw;background-image:url(./fonts/lishishu.jpeg)"></div>  
+                                                                  <div class="mui-card-content">  
+                                                                      <div class="mui-card-content-inner">  
+                                                                          <p>Posted on January 18, 2016</p>  
+                                                                          <p style="color: #333;">这里显示文章摘要，让读者对文章内容有个粗略的概念...</p>  
+                                                                      </div>  
+                                                                  </div>  
+                                                                  <div class="mui-card-footer">  
+                                                                      <a class="mui-card-link">Like</a>  
+                                                                      <a class="mui-card-link">Read more</a>  
+                                                                  </div>  
+                                                              </div> -->  
+                                                              <!-- <div class="mui-card">  
+                                                                  <div class="mui-card-header mui-card-media">  
+                                                                      <img src="http://www.dcloud.io/hellomui/images/logo.png" style="width:34px">  
+                                                                      <div class="mui-media-body">  
+                                                                          明代本草学家兰茂  
+                                                                          <p>发表于 明代</p>  
+                                                                      </div>  
+                                                                  </div>  
+                                                                  <div class="mui-card-content" >  
+                                                                      <img src="./fonts/lanmao.jpeg" alt="" width="100%"/>  
+                                                                  </div>  
+                                                                  <div class="mui-card-footer">  
+                                                                      <a class="mui-card-link">点赞</a>  
+                                                                      <a class="mui-card-link">评论</a>  
+                                                                      <a class="mui-card-link">更多</a>  
+                                                                  </div>  
+                                                              </div> -->  
+                                                          </div>  
+                                                      </div>  
+                                                  </div>  
+				<!-- 名医 -->
+                <div class="mui-slider-item mui-control-content">  
+				
+                    <div class="mui-scroll-wrapper">  
+					<div class="mui-card">
+					    <div class="mui-card-header">赤脚医生——张之道</div>  
+					    <div class="mui-card-content">  
+					        <div class="mui-card-content-inner">  
+					             <img src="fonts/yisheng.jpg" >
+					        </div>  
+					    </div>  
+					    <div class="mui-card-footer">张之道：我们的民族彝药宝库，我们现在只是敲开一扇门，踩进一只脚，还有大量的“宝藏”没有发掘，那么作为我们自己 只要能动 只要有一口气，那么我们就应该珍惜大好时代，尽我们所能，有一口气做什么都要（努力），别的我们不能做，我们就继承发展，发扬民族医药。</div>  
+					<div class="mui-card-footer2">
+						<a href="doctor.html">点击查看更多</a>
+					</div>
+                       <!--  <div class="doc">
+							 <ul>
+								 <h4>彝族名医<span class="mui-icon mui-icon-personadd"></span></h4>
+							 	
+									<div class="mui-scroll" id="doctor">
+								
+									</div> -->
+									
+									
+						
+									
+									
+							
+                         	
+                         </div>
+                    </div>  
+                </div> 
+				 <!-- 彝药 -->
+                <div class="mui-slider-item mui-control-content">  
+                    <div class="mui-scroll-wrapper">  
+                        <div class="mui-scroll"> <!-- 开始 -->
+						 <ul class="mui-table-view mui-grid-view">
+						        <li class="mui-table-view-cell mui-media mui-col-xs-6">  
+						            <a href="#">  
+						                <img class="mui-media-object" src="fonts/mifang.png">  
+						                <div class="mui-media-body"></div>  
+						            </a>  
+						        </li>  
+						        <li class="mui-table-view-cell mui-media mui-col-xs-6">  
+						            <a href="#">  
+						                <img class="mui-media-object" src="fonts/yaoyu.png">  
+						                <div class="mui-media-body"></div>  
+						            </a>  
+						        </li>  
+						        <li class="mui-table-view-cell mui-media mui-col-xs-6">  
+						            <a href="#"><img class="mui-media-object" src="fonts/yyao1.png">  
+						                <div class="mui-media-body"></div>  
+						            </a>  
+						        </li>  
+						        <li class="mui-table-view-cell mui-media mui-col-xs-6">  
+						            <a href="#">  
+						                <img class="mui-media-object" src="fonts/yyao2.png">  
+						                <div class="mui-media-body"></div>  
+						            </a>  
+						        </li>  
+						    </ul> 
+						 		
+                           <ul class="mui-table-view">
+                           	<li class="mui-table-view-cell mui-media">
+                           		<a href="javascript:;">
+                           			<img class="mui-media-object mui-pull-left" src="fonts/yaocai1.png">
+                           			<div class="mui-media-body">
+                           				呕血秘方
+                           				<p class="mui-ellipsis">秘方:大蜘蛛网两块。
+                           用法:将炒黄后研为细末，以温黄酒一次送服。
+                           方解:本方贵州彝族民间秘而不传的特效验方。主治呕血患者。总治愈率达98%。显著奇效。随访多年未见复发。
+                           </p>
+                           			</div>
+                           		</a>
+                           	</li>
+                           	<li class="mui-table-view-cell mui-media">
+                           		<a href="javascript:;">
+                           			<img class="mui-media-object mui-pull-left" src="fonts/yaocai2.png">
+                           			<div class="mui-media-body">
+                           				皮肤顽固性瘙痒秘方
+                           				<p class="mui-ellipsis">秘方:草莓、野饭豆各20g，甜白酒适量。用法:两味药煎服，以甜酒为引。方解∶草莓为蔷薇科植物白酒果(新平)。野饭豆为蝶形花科植物山豆根，性味:苦寒。两药配用有清火，解毒，祛风，止痒;甜白酒为引可将郁于肌肤之邪，宣达透表，风热之邪外出，痒疹消散，此方为彝族古籍中挖掘而出，十分珍贵。</p>
+                           			</div>
+                           		</a>
+                           	</li>
+                           	<li class="mui-table-view-cell mui-media">
+                           		<a href="javascript:;">
+                           			<img class="mui-media-object mui-pull-left" src="fonts/yaocai3.png">
+                           			<div class="mui-media-body">
+                           			    彝族外疗
+                           				<p class="mui-ellipsis">具有简,便,廉,效且无明显副作用的特点,是彝家山寨祖辈经常使用的特色方法和临床实践的结晶.彝医在治疗疾病中摸索出来的宝贵经验形成特色理论体系,指导着许多外疗法的产生,主要有药酒擦,彝药散敷,彝药洗,刮痧,针刺,拔罐,割治,按摩等</p>
+                           			</div>
+                           		</a>
+                           	</li>
+                           	<li class="mui-table-view-cell mui-media">
+                           		<a href="javascript:;">
+                           			<img class="mui-media-object mui-pull-left" src="fonts/yaocai5.png">
+                           			<div class="mui-media-body">
+                           				固肾培元药浴
+                           				<p class="mui-ellipsis">中药成份：九节风、扶芳藤、大发散、大钻、淮通等云南独特气候下生成的珍稀中草药。
+                           针对症状：体质虚弱、缺少体育锻炼喜欢泡浴蒸桑拿、处于亚健康状态者。
+                           使用效果：改善体质虚弱现象、增强免疫力、调节皮肤吸收功能、恢复健康状态。
+                           适用人群：男女老少皆宜。
+                           温馨提示：十袋为一个疗程，每隔一天泡浴一次。
+                           </p>
+                           			</div>
+                           		</a>
+                           	</li>
+                           	<li class="mui-table-view-cell mui-media">
+                           		<a href="javascript:;">
+                           			<img class="mui-media-object mui-pull-left" src="fonts/yaocai6.png">
+                           			<div class="mui-media-body">
+                           			    舒筋活络药浴
+                           				<p class="mui-ellipsis">中药成份：穿破石、九牛藤、大发散、软筋藤等云南独特气候下生成的珍稀中草药。
+                           针对症状：颈椎、腰椎劳损，风湿，内风湿，腰酸背痛，循环不畅，肌肉酸痛。
+                           使用效果：舒筋活络、活血化瘀、促进血液循环、消炎止痛、对各类风热湿毒引起的风湿骨痛、关节疼痛有显著改善作用。
+                           适用人群：本品属天然民间奇方，男女老少皆宜。
+                           使用小秘方：风湿较重部位可采用局部热敷，效果更佳
+                           温馨提示：十袋为一个疗程，每隔一天泡浴一次
+                           </p>
+                           			</div>
+                           		</a>
+                           	</li>
+                           	<li class="mui-table-view-cell mui-media">
+                           		<a href="javascript:;">
+                           			<img class="mui-media-object mui-pull-left" src="fonts/yaocai4.png">
+                           			<div class="mui-media-body">
+                           				安心养神药浴
+                           				<p class="mui-ellipsis">中药成份：透骨草、善药、合欢、郁金等云南独特气候下生成的珍稀中草药。
+                           针对症状：疲倦、精力减退、记忆衰退、神经衰弱、失眠、心悸、健忘、皱纹渐增。
+                           使用效果：精力旺盛、消除疲劳、体力恢复、面色红润、光泽肌肤、皱纹渐消、改善的心脏输出量、增强心脏的供血功能、显著改善血液循环及全身微循环、焕发生命固有活力
+                           温馨提示：十袋为一个疗程，每隔一天泡浴一次。
+                           </p>
+                           			</div>
+                           		</a>
+                           	</li>
+                           </ul>
+                        </div>  
+						
+                    </div>  
+					
+					
+                </div>  
+				<!-- 食疗 -->
+                 <div class="mui-slider-item mui-control-content">  
+                                   <div class="mui-scroll-wrapper">  
+                                       <div class="mui-scroll">
+               							<div class="mui-card">
+               								<div class="mui-card-header">彝族天然食疗</div>
+               								<div class="mui-card-content">
+               									<div class="mui-card-content-inner">
+               										其中主要包括药食同源野菜馆、彝族药茶、彝族药酒
+               									</div>
+               								</div>
+               								<div class="mui-card-footer"><a class="mui-card-link">点击查看更多</a></div>
+               							</div>
+               							<div class="mui-card">
+               							    <div class="mui-card-header mui-card-media" style="height:40vw;background-image:url(./fonts/guojiu.jpeg)"></div>  
+               							    <div class="mui-card-content">  
+               							        <div class="mui-card-content-inner">  
+               							            <p>上传于2021年12月4日</p>  
+               							            <p style="color: #333;">彝族山茱萸果酒，其特征是所述的山茱萸果酒是由300500重量份山茱萸鲜果的酿造酒和白酒浸泡中药的所制得的药酒按比例勾兑而成。本发明以山茱萸鲜果为主通过发酵和配加中药浸提原酒而成的山萸酒，通过科学的组方，使单纯的山茱萸滋肝补肾作用更加突出，同时又使山茱萸酒的保健功效更加协调全面。对于中老年人肝肾虚，脾胃弱，腰腿痛等普遍存在的身体不适针对性强，同时又解决了睡眠不香的问题，阴阳气血互补，配伍组方合理，疗效明显。</p>  
+               							        </div>  
+               							    </div>  
+               							    <div class="mui-card-footer">  
+               							        <a class="mui-card-link">点击购买</a>  
+               							        <a class="mui-card-link">查看相关信息</a>  
+               							    </div>  
+               							</div>
+               							<ul class="mui-table-view mui-grid-view">
+               							    <li class="mui-table-view-cell mui-media mui-col-xs-6">  
+               							        <a href="#">  
+               							            <img class="mui-media-object" src="./fonts/jiaogulan.jpeg">  
+               							            <div class="mui-media-body">绞股蓝这种野菜具有很高的药用价值</div>  
+               							        </a>  
+               							    </li>  
+               								<li class="mui-table-view-cell mui-media mui-col-xs-6">
+               								    <a href="#"><img class="mui-media-object" src="./fonts/paocha.jpeg">  
+               								        <div class="mui-media-body">杜仲叶可用于泡茶、入菜、煮粥</div>  
+               								    </a>  
+               								</li>
+               							    <li class="mui-table-view-cell mui-media mui-col-xs-6">  
+               							        <a href="#">  
+               							            <img class="mui-media-object" src="./fonts/tianmadunrou.jpeg">  
+               							            <div class="mui-media-body">天麻可以用于炖肉、入菜、火锅等</div>  
+               							        </a>  
+               							    </li>  
+               								<li class="mui-table-view-cell mui-media mui-col-xs-6">
+               								    <a href="#">  
+               								        <img class="mui-media-object" src="./fonts/guizhencao.jpeg">  
+               								        <div class="mui-media-body">鬼针草是云南特有的野菜之一</div>  
+               								    </a>  
+               								</li>
+               							</ul>
+                                       </div>  
+                                   </div>  
+                               </div>  
+				<!-- 地址 -->
+                <div class="mui-slider-item mui-control-content">  
+                  						<img src="./fonts/ditu.png" >
+                  						<ul class="mui-table-view">
+                  						    <li class="mui-table-view-cell">彝族毕摩医药养生馆
+                  						       <span class="mui-badge mui-badge-primary">1</span>
+											  <!-- <span class="mui-icon mui-icon-phone"></span> -->
+                  						    </li>
+                  						    <li class="mui-table-view-cell">寻甸回族彝族自治县医药公司
+                  							 <p>昆明市寻甸回族彝族自治县东钟街25号</p>
+                  						        <span class="mui-badge mui-badge-success">2</span>
+                  						    </li>
+                  						    <li class="mui-table-view-cell">石林药业石林县医药公司
+                  							<p>昆明市石林彝族自治县阿诗玛东路石林大酒店西北侧</p>
+                  						        <span class="mui-badge">3</span>
+                  						    </li>
+                  							<li class="mui-table-view-cell">中医药民族医药博物馆
+                  							<p>昆明市呈贡区雨花街道雨花路云南中医药大学呈贡校区</p>
+                  							    <span class="mui-badge mui-badge-warning">4</span>
+                  							</li>
+                  							<li class="mui-table-view-cell">禄劝金国医药有限公司
+                  							<p>昆明市禄劝彝族苗族自治县翠华街翠花派出所西南侧</p>
+                  							    <span class="mui-badge mui-badge-danger">5</span>
+                  							</li>
+                  							<li class="mui-table-view-cell">玖铭医药公司
+                  							<p>昆明市禄劝彝族苗族自治县崇德农村合作基金会东侧</p>
+                  							    <span class="mui-badge mui-badge-purple">6</span>
+                  							</li>
+                  							<li class="mui-table-view-cell">刘伟堂中西医药有限公司
+                  							 <p>昆明市禄劝彝族苗族自治县振兴街皎平渡中心校(初中部)西侧</p>
+                  							    <span class="mui-badge mui-badge-success">7</span>
+                  							</li>
+                  						</ul>
+                </div>  
+               <!-- <div class="mui-slider-item mui-control-content">  
+                    <div class="mui-scroll-wrapper">  
+                        <div class="mui-scroll">  
+                            自行脑补页面  
+                        </div>  
+                    </div>  
+                </div> --> 
+            </div>  
+        </div>  
+    </div>  
+    <script type="text/javascript">  
+    mui.ready(function() {  
+        mui('.mui-scroll-wrapper').scroll({  
+            bounce: true,  
+            indicators: true,  
+            deceleration:mui.os.ios?0.003:0.0009  
+        });  
+        mui('.mui-scroll').on('tap','.mui-control-item:not(.mui-active)',function(){  
+            mui('.mui-slider').slider().gotoItem(this.getAttribute('data-index'));  
+        });  
+    });  
+    </script>  
+
+</body>  
+
+</html>

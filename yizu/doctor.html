@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<style type="text/css">
+		body{font-family: "Microsoft YaHei",sans-serif;color:#333;background-color: #F1E9DC;}  
+		div.mui-content{background-color: #F1E9DC;}  
+		p{margin-bottom: 0px;}  
+		.mui-slider-indicator.mui-segmented-control{  
+		    padding: 5px 10px;  
+		    background: #FFF;  
+		}  
+		.mui-segmented-control.mui-scroll-wrapper{  
+		    height: 45px;  
+		}  
+		.mui-segmented-control.mui-scroll-wrapper .mui-control-item{  
+		    width: 100px;  
+		    border: 1px solid #ccc;  
+		    box-shadow:0 0 5px #aaa;  
+		    line-height: 30px;  
+		}  
+		.mui-segmented-control.mui-scroll-wrapper .mui-control-item.mui-active{  
+		    color: #fff;  
+		    background-color: #78909C;  
+		}  
+		.mui-fullscreen .mui-segmented-control~.mui-slider-group{  
+		    top: 45px;  
+		}  
+		.mui-slider-group .mui-scroll-wrapper{  
+		    padding-top: 5px;  
+		}  
+		</style>  
+	</head>
+
+	<body>
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init();  
+			mui('.mui-scroll-wrapper').scroll();
+		    mui.plusReady(function(){
+	  				mui.ajax({
+	  					url:'http://172.20.10.7:8080/user',
+	  					dataType: 'json',
+	  					type:'GET',
+	  					success: function(data) {
+	  						var la = data.data;
+	  						var lablist = document.getElementById("doctor");
+	  						console.log(la.length);
+	  						for( i = 1; i < Math.min(la.length,10); i++) { //循环后台传过来的Json数组  
+	  						    var datas = la[i];
+	  							console.log(datas.name);
+	  							var title=datas.jianjie;
+	  							var tab=datas.name;
+	  							var id='';
+	  							var loginname=datas.jianjie;
+	  							var content=datas.jianjie;
+	  							lablist.innerHTML= lablist.innerHTML+
+	  							'<li class="mui-table-view-cell mui-media"><a href="orderlabroom.html">'
+	  		                +'<div>'+tab
+	  		                +'<p class="mui-ellipsis">'+
+	  		                title+'</p>'
+	  		                +'</div></a></li>'
+	  		            ;
+	  		        }                
+	  		    },
+	  		    dataType:'json',
+	  		    error    : function(xhr,type,errorThrown){
+	  		        mui.toast(type);
+	  		    }
+	  		});
+	  		      
+	  		});
+			
+		</script>
+		<div class="doc">
+									 <ul>
+										 <h4>彝族名医<span class="mui-icon mui-icon-personadd"></span></h4>
+									 	
+											<div class="mui-scroll" id="doctor">
+										
+											</div>
+	</body>
+
+</html>

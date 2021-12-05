@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+	<style type="text/css">
+	body{
+		font-family: "Microsoft YaHei",sans-serif;
+		
+		background-color:#F1E9DC;
+		}  
+
+
+
+	h2{
+		padding-top:100px ;
+	     padding-left: 100px;
+		font-style: oblique;
+		font-family: "黑体";
+		font-size: 50px;
+		color: #78909C;
+		 text-shadow: 2px 2px 5px #78909C;
+		  font-weight: bold;
+	}
+	img{
+		width: 380px;
+		height: 30px;
+	}
+	
+	</style>  
+		
+	
+
+	</head>
+
+	<body>
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			 // var dom_login_btn = document.getElementById("11");
+			 // //     var dom_login_btn = document.querySelector("button");
+			 // // // document.getElementById("login");
+			           function vasl() {
+			                var cname = document.getElementById("account").value.trim();
+			                var pwd = document.getElementById("password").value.trim();
+			                if(cname.trim().length == 0) {
+			                    mui.toast("用户名不能为空!")
+			                    return;
+			                } else if(pwd.trim().length == 0) {
+			                    mui.toast("密码不能为空!");
+			                    return;
+			                } else {
+								console.log(cname);
+							mui.ajax({
+										url:'http://172.20.10.7:8080/admin',
+										data:{
+											name:cname,
+											pwd:pwd
+										},
+										dataType: 'json',
+										type:'GET',
+										success: function(data) {
+											console.log(data);
+											    mui.openWindow({
+											                                             url: 'index.html',
+											                                             id: 'index',
+											                                    
+											                                         });
+							          
+							    },
+							    dataType:'json',
+							    error    : function(xhr,type,errorThrown){
+							        mui.toast(type);
+							    }
+							});
+			                }
+			            };
+					
+			      
+		</script>
+		<img src="./fonts/ztl.jpg" >
+		<h2><b>彝药通</b></h2>
+		<br><br><br><br><br><br>
+		<form class="mui-input-group" action="" id="form" >
+		    <div class="mui-input-row">
+		        <label>用户名</label>
+		    <input type="text" class="mui-input-clear" placeholder="请输入用户名" id="account">
+		    </div>
+		    <div class="mui-input-row">
+		        <label>密码</label>
+		        <input type="password" class="mui-input-password" placeholder="请输入密码" id="password">
+		    </div>
+		    <div class="mui-button-row">
+	
+		        <button type="button" class="mui-btn mui-btn-primary" id="losc" onclick="vasl()">确认</button>
+		        <button type="button" class="mui-btn mui-btn-danger" >取消</button>
+		    </div>
+		</form>
+
+		
+		</div>
+		
+
+	</body>
+
+</html>
